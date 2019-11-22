@@ -2,14 +2,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Playlists</h1>
-    
-    <!-- New link here -->
+<h1>Playlists</h1>
+
 <a href='/playlists/new'>New Playlist</a>
 
+{% for playlist in playlists %}
     
-    {% for playlist in playlists %}
-        <h2>{{ playlist.title }}</h2>
-        <small>{{ playlist.description }}</small>
-    {% endfor %}
+    <h2><a href='/playlists/{{ playlist._id }}'>{{ playlist.title }}</a></h2>
+    <small>{{ playlist.description }}</small>
+{% endfor %}
 {% endblock %}
