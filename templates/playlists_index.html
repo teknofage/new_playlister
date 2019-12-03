@@ -4,16 +4,14 @@
 {% block content %}
 <h1>Playlists</h1>
 
-<a href='/playlists/new'>New Playlist</a>
+<!-- <a href='/playlists/new'>New Playlist</a> -->
 <div class='row'>
     {% for playlist in playlists %}
     <div class='col-sm-3'>
             <div class="card">
                     <div class="card-body">
                         <h2><a href='/playlists/{{ playlist._id }}'>{{ playlist.title }}</a></h2>
-                        <p class="card-text">
                         <small>{{ playlist.description }}</small>
-                        </p>
                     </div>
             </div>
     </div>

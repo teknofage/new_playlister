@@ -2,7 +2,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<a href="/">Back to Home</a>
 <a href='/'>Back to Home</a>
 <div class='row'>
     <div class='col-sm-6 col-sm-offset-3'>
@@ -14,7 +13,6 @@
         </div></div>
             {% endfor %}
     <p>
-        Playlist Rating: <input type="number" name="quantity" min="1" max="5">
     </br>
     <a href="/playlists/{{ playlist._id }}/edit">Edit</a>
     <p><form method='POST' action='/playlists/{{ playlist._id }}/delete'>
@@ -22,6 +20,16 @@
         <button class='btn btn-primary' type='submit'>Delete</button>
     </form></p>
     </p>
+    <hr>
+
+    {% include 'partials/comment_form.html' %}
+
+    <hr>
+
+    <!-- Show Comments -->
+    {% for comment in comments %}
+        {% include 'partials/comment.html' %}
+    {% endfor %}
     </div>
 </div>
 {% endblock %}
