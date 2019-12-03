@@ -39,8 +39,9 @@ def playlists_submit():
     playlist = {
         'title': request.form.get('title'),
         'description': request.form.get('description'),
+        'video_ids': video_ids,
         'videos': videos,
-        'video_ids': video_ids
+        'ratings': int(request.form.get('ratings'))
     }
     playlist_id = playlists.insert_one(playlist).inserted_id
     return redirect(url_for('playlists_show', playlist_id=playlist_id))
@@ -68,7 +69,8 @@ def playlists_update(playlist_id):
         'title': request.form.get('title'),
         'description': request.form.get('description'),
         'videos': videos,
-        'video_ids': video_ids
+        'video_ids': video_ids,
+        'ratings': int(request.form.get('ratings'))
     }
     # set the former playlist to the new one we just updated/edited
     playlists.update_one(
