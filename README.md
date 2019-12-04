@@ -13,7 +13,5 @@ What didn't make sense?
 One of my playlists had the video links all work. The other had all of the video links break, even when I added new ones.
 
 
-
-
 Did anyone around you face the same issues?
 
